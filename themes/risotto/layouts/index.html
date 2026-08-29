@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+    {{ .Content }}
+
+    {{ range first 4 (where .Site.RegularPages "Section" "posts") }}
+
+        <article>
+            <h2>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </h2>
+
+            {{ .Content }}
+
+        </article>
+
+        <hr>
+
+    {{ end }}
+
+{{ end }}

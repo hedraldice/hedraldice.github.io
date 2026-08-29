@@ -1,0 +1,32 @@
+/* Override this file to customise the theme's CSS for your site */
+
+pre {
+    position: relative;
+}
+
+.copy-code-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    width: 32px;
+    height: 32px;
+
+    border: 1px solid #67db4b;
+    border-radius: 8px;
+
+    background: rgba(60,60,60,0.8);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+pre:hover .copy-code-button {
+    opacity: 1;
+}

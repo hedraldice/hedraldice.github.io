@@ -1,0 +1,22 @@
+<nav class="page__nav main-nav">
+    <ul>
+      <li class="nomarker">
+        <h1 class="page__logo" style="display:flex;align-items:center;">
+          <a href="{{ .Site.BaseURL }}" class="page__logo-inner">
+            {{ .Site.Title }}
+          </a>
+
+          <img
+            src="/dice_row.png"
+            alt="logo"
+            style="height:20px;margin-left:8px;"
+          >
+        </h1>
+      </li>
+
+    {{ $currentPage := . }}
+    {{ range .Site.Menus.main }}
+    <li class="main-nav__item"><a class="nav-main-item{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) (eq ($currentPage.Permalink) (.URL | absLangURL)) }} active{{end}}" href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }}</a></li>
+    {{ end }}
+    </ul>
+</nav>

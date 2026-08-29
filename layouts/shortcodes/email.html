@@ -1,0 +1,22 @@
+{{ $user := .Get "user" }}
+{{ $domain := .Get "domain" }}
+{{ $text := .Get "text" | default (printf "%s@%s" $user $domain) }}
+
+<span class="obfuscated-email" data-user="{{ $user }}" data-domain="{{ $domain }}" data-text="{{ $text }}">
+  <noscript>Enable JavaScript to see email, or contact via other means.</noscript>
+</span>
+
+<script>
+(function() {
+  document.querySelectorAll('.obfuscated-email').forEach(function(el) {
+    var user = el.getAttribute('data-user');
+    var domain = el.getAttribute('data-domain');
+    var text = el.getAttribute('data-text');
+    var a = document.createElement('a');
+    a.href = 'mailto:' + user + '@' + domain;
+    a.textContent = text;
+    el.innerHTML = '';
+    el.appendChild(a);
+  });
+})();
+</script>

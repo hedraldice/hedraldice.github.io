@@ -1,0 +1,34 @@
+baseURL = 'https://hedraldice.github.io/'
+languageCode = 'en-us'
+locale = 'en-us'
+title = 'Hedral Dice - Tinkerer, Projects...'
+theme = 'risotto'
+
+[pagination]
+pagerSize = 5
+
+[params]
+defaultTheme = "dark"
+ShowReadingTime = true
+ShowShareButtons = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+
+[menu]
+
+[[menu.main]]
+identifier = "posts"
+name = "Posts"
+url = "/posts/"
+weight = 10
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 20
+
+[markup.goldmark.renderer]
+unsafe = true
+
